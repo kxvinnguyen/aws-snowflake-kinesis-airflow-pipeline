@@ -1,0 +1,23 @@
+aws:
+  region: us-east-1  # Update with your region
+  kinesis:
+    stream_name: data-stream  # Will be updated from Terraform output
+    shard_count: 1
+  s3:
+    data_bucket: data-bucket  # Will be updated from Terraform output
+    airflow_logs_bucket: airflow-logs  # Will be updated from Terraform output
+  secrets_manager:
+    snowflake_secret_name: snowflake-credentials  # Will be updated from Terraform output
+
+snowflake:
+  # These will be retrieved from AWS Secrets Manager after Terraform provisioning
+  account: your_account_identifier
+  username: your_username
+  password: your_password
+  warehouse: compute_wh
+  database: data_pipeline_db
+  schema: public
+  role: accountadmin
+
+airflow:
+  schedule_interval: "0 * * * *"  # Hourly 

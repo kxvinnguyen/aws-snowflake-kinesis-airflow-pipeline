@@ -1,0 +1,14 @@
+# AWS Configuration
+aws_region = "us-east-1"
+project_name = "snowflake-kinesis-pipeline"
+environment = "dev"
+kinesis_shard_count = 1
+
+# Snowflake Configuration
+snowflake_account = "your-snowflake-account"
+snowflake_username = "your-snowflake-username"
+snowflake_password = "your-snowflake-password"
+snowflake_database = "KINESIS_DATA"
+snowflake_warehouse = "KINESIS_WH"
+snowflake_role = "ACCOUNTADMIN"
+snowflake_schema = "PUBLIC"
